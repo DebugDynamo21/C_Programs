@@ -15,6 +15,6 @@ int main(){
     c = d;
     d = temp;
 
-    printf("The value of c and d after interchange: %d\t%d", c, d);
+    printf("\nThe value of c and d after interchange: %d\t%d\n", c, d);
     return 0; 
 }
