@@ -1,6 +1,7 @@
 /* Write a C program to find Compound Interest. */
 
 #include <stdio.h>
+#include <math.h>
 int main(){
     double principal, rate, compoundinterest, time;
     int n;
