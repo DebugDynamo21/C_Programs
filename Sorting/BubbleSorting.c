@@ -2,29 +2,36 @@
 
 #include <stdio.h>
 int main(){
-    int a[5], t;
-    printf("Enter the values in array a: ");
-    for(int i = 0; i<5; i++){
-        scanf("%d", & a[i]);
-    }
-    printf("Values in array a: \n");
-    for(int i = 0; i<5; i++){
-        printf("%d\t", a[i]);
-    }
-    printf("\n");
-    for(int i= 0; i<5; i++){
-        for(int j = 0; j<5-i-1; j++){
-            if(a[j] > a[j+1]){
-                t = a[j];
-                a[j] = a[j+1];
-                a[j+1] = t;
+      int n, i, t, j;
+      printf("\nEnter the size of array: ");
+      scanf("%d", &n);
+
+      int arr[n];
+      printf("Enter the elements in array: ");
+      for(i = 0; i < n; i++){
+            scanf("%d", &arr[i]);
+      }
+
+      printf("Array: \n");
+      for(i = 0; i < n; i++){
+            printf("\t%d", arr[i]);
+      }
+
+      for(i = 0; i < n - 1; i++){
+            for(j = 0; j < n - i - 1; j++){
+                  if(arr[j] > arr[j + 1]){  // For ascending order
+                        t = arr[j];         // swapping
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = arr[j];
+                  }
             }
-        }
-    }
-    printf("The sorted array is: \n");
-     for(int i = 0; i<5; i++){
-        printf("%d\t", a[i]);
-     }
-     printf("\n");
-     return 0; 
+      }
+
+      printf("\nThe sorted array(in ascending order: \n");
+      for(i = 0; i < n; i++){
+            printf("\t%d", arr[i]);
+      }
+      
+      printf("\n");
+      return 0; 
 }
